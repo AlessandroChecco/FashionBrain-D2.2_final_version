@@ -1,0 +1,141 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\graphicspath{{images/}}
+\graphicspath{{images/logos/}{images/figs/}}
+
+
+\newcommand{\footertext}{\raisebox{3mm}{\DelNumber{} -- \ShortTitle}}
+\setlength{\footheight}{36pt}
+\newcommand{\footerlogo}{\raisebox{3mm}{\leavevmode\includegraphics[width=2cm]{logo_white}}}
+\clearscrheadfoot
+\pagestyle{empty}
+\thispagestyle{plain}
+
+% \begin{tikzpicture}[overlay,remember picture]
+%   \draw [line width=1pt]
+%   ($ (current page.north west) + (1cm,-1cm) $)
+%   rectangle
+%   ($ (current page.south east) + (-1cm,1cm) $);
+% \end{tikzpicture}
+
+\definecolor{SINetblue}{HTML}{07505B} 
+\newcolumntype{C}{ >{\centering\arraybackslash} m{4cm} }
+
+\begin{center}
+Horizon 2020
+\vspace{2cm}
+
+  \begin{center}
+
+
+
+  \includegraphics[width=0.7\textwidth]{logo_white.pdf}
+  \vspace{2mm}
+
+  \end{center}
+  \vspace{0.5cm}
+  {\Large Understanding Europe's Fashion Data Universe\\}
+  \vspace{2cm}
+  
+  \begin{spacing}{2.5}
+    \textbf{\Huge \DelTitle}\\\vspace{10mm}
+    \textbf{\Large Deliverable number: \DelNumber} \\\vspace{10mm} 
+    {\large Version \DelVersion}
+  \end{spacing}
+  
+  \vspace*{\fill}
+
+  %just to avoid warning :)
+  \newcommand\undefcolumntype[1]{\expandafter\let\csname NC@find@#1\endcsname\relax}
+  \newcommand\forcenewcolumntype[1]{\undefcolumntype{#1}\newcolumntype{#1}}
+  \forcenewcolumntype{C}{ >{\arraybackslash} m{3cm} }
+
+
+  \begin{tabular}{C@{\hspace*{0cm}}l}
+    \includegraphics[scale=0.2]{images/logos/EU_Flag_320_213} &
+    \begin{tabular}{l}
+    {Funded by the European Union’s Horizon 2020 research and }\\
+    {innovation programme under Grant Agreement No. 732328}\\
+    \end{tabular}
+  \end{tabular}
+\end{center}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second Page 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\headheight}{1cm}
+\setlength{\footskip}{18mm}
+\addtolength{\textheight}{-\footskip} \pagestyle{empty}
+% add johan
+\onlypnum
+% end johan
+
+\begin{flushleft}
+  \begin{tabular}{ll}
+    \textbf{Project Acronym:}       &   FashionBrain \\
+    \textbf{Project Full Title:}    &   Understanding Europe's Fashion Data Universe  \\
+    \textbf{Call:}                  &   H2020-ICT-2016-1 \\ 
+    \textbf{Topic:}                 &   ICT-14-2016-2017, Big Data PPP: Cross-sectorial and \\
+& cross-lingual data integration and experimentation  \\
+%    \textbf{Type of Action:}        &   RIA \\
+%    \textbf{Grant Number:}          &   699924 \\
+    \textbf{Project URL:}           &  \url{https://fashionbrain-project.eu} 
+  \end{tabular}
+
+
+
+% define "struts", as suggested by Claudio Beccari in
+%    a piece in TeX and TUG News, Vol. 2, 1993.
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+
+
+% EDIT THIS -------------------------------------------
+  \begin{tabular}{|l|p{100mm}|}\hline
+   % \Tstrut\Bstrut Editor& XXX, XXX-Institution\\\hline
+    \Tstrut\Bstrut Deliverable type& Report (R) \\\hline
+    \Tstrut\Bstrut Dissemination level& Public (PU)\\\hline
+    \Tstrut\Bstrut Contractual Delivery Date& 30 June 2018\\\hline
+    \Tstrut\Bstrut Resubmission Delivery Date& 27 February 2019\\\hline
+    % \Tstrut\Bstrut Suggested Readers:&Project partners, future community-lab.net users\\\hline
+    \Tstrut\Bstrut Number of pages&\ref{TotPages}, the last one
+being no. \pageref{TotPages}\\\hline
+    %\Tstrut\Bstrut Keywords:& XXX \\\hline
+    \Tstrut Authors&
+ \begin{tabular}{l}
+     Ines Arous, Mourad Khayati - UNIFR \Bstrut
+     \\
+    \end{tabular}\\\hline
+    \Tstrut\Bstrut Peer review &
+    \begin{tabular}[t]{l}
+		Alessandro Checco, Jennifer Dick - USFD\\ Jennie Zhang - MDBS\\
+	\end{tabular}\\\hline
+  \end{tabular}
+% -----------------------------------------------------
+  
+  
+\end{flushleft}
+
+% EDIT THIS -------------------------------------------
+\section*{Change Log}
+\begin{tabular}{|c|c|c|c|c|}\hline
+    \textbf{Version} & \textbf{Date} & \textbf{Status} & \textbf{Partner} &  \textbf{Remarks}\\\hline
+      0.1 & 01/08/2017& Draft& UNIFR &  \\\hline
+      1.0 & 08/09/2017& Final & UNIFR,  USFD, Zalando & Rejected 15/03/2018  \\\hline
+      2.0 & 20/04/2018&  Resubmitted Final & UNIFR, USFD & Rejected 26/04/2018 \\\hline
+      3.0 & 21/05/2018& Resubmitted Final & UNIFR, USFD & Rejected 15/10/2018\\\hline
+      3.1 & 15/02/2018& Revised Draft & UNIFR, USFD, Zalando& \\\hline
+      4.0 & 27/02/2019& Resubmitted Final & UNIFR, USFD, Zalando&  \\\hline
+  \end{tabular}
+\section*{Deliverable Description}
+This deliverable will consist of an extended requirement analysis document detailing expert sourcing. It will collect requirements based on the data sources identified in WP1 (T1.1) and it will feed into WP3.
+% -----------------------------------------------------
+\clearpage
+

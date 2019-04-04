@@ -1,0 +1,77 @@
+\chapter[Short Title Here]{Instructions - How to Use This Template}\label{sec:instr}
+If you want to use Overleaf, make a copy of this template by clicking on Menu/Copy Project.
+If you don't have an Overleaf account you can still copy the source and use it locally (Menu/Source), but you will not be able to update the glossary to the common shared one. In that case please let the programme coordinator know about this so we can update the file with your glossary.
+
+Please modify the commands that starts with \verb|% EDIT THIS|
+in \verb|main.tex| and \verb|title.tex|. 
+
+
+
+Start a main section with the \verb|\chapter{}| command and the subsequent subsections with \verb|\section{}|, \verb|\subsection{}| and \verb|\subsection*{}| if no number is needed. \textbf{Please Capitalize the Title!} (see \url{https://www.bkacontent.com/how-to-correctly-use-apa-style-title-case/}).
+\section{Abbreviations and Acronyms}
+Please \textbf{make an effort} to define all abbreviations and acronyms!
+Remember to keep updated the glossary file (\url{https://www.overleaf.com/8548773748ymqchwgtzxts})\footnote{have a look at the glossary source  for more details on how to use acronyms \url{https://www.overleaf.com/project/5be8a444db30c7318938db4c}.} and to click refresh here before compiling. From the external file, only the acronyms you actually use will be shown in this report.
+\subsection*{Simple Acronyms}
+To make a defined acronym appear in the list, use the command \verb|\acronymused{AMT}| in \verb|main.tex| before \verb|\begin{document}|.
+\subsection*{Advanced Acronyms (usually not needed, can be skipped)}
+You can use acronyms obtained from the external glossary file like this (automatic expansion first time that is used in the document): \ac{AMT}, \ac{CF}, this is the second time: \ac{AMT}, you can also have plurals \acp{AMT} and the long version if needed again \acf{AMT}, and the long version without the acronym in parentheses \acl{AMT}.
+ For more information see \url{http://mirrors.ctan.org/macros/latex/contrib/acronym/acronym.pdf}.
+\section{Reviews and Track Changes}
+If you are using overleaf you can click on "Review" on the top right toolbar and add comments. Clicking on history you can access to the recent changes.
+If track changes functionality is needed, please contact the programme coordinator.
+If you don't use any acronym, the list of acronym will be not generated.
+
+
+\section{Citations}
+Use the bib file \verb|references.bib| to cite like this:\cite{DeferredRouting}, \cite{olsrorg}, \citeauthor{bellalta2016interactions}, \citep{bellalta2016interactions}, \citet{bellalta2016interactions}. You can use google scholar export to bibtex to get the snippet.
+If you have citation that you want to use in the future, you can add them to the file \verb|global.bib| here: \url{https://www.overleaf.com/project/5be8a444db30c7318938db4c}.  If you put your references in the global file you should not put them in the \verb|references.bib| file (duplicates will throw an error).
+
+\section{Tables}
+You can import tables from spreadsheets or google docs using \url{https://www.tablesgenerator.com/latex_tables}.
+See Table~\ref{tab:ex} for an example of a table.
+\begin{table}\centering
+\ra{1.0} %this is to stretch/shrink the table
+\begin{tabular}{@{}llr@{}} \toprule
+\multicolumn{2}{c}{Item} \\ \cmidrule(r){1-2}
+Animal & Description & Price (\$)\\ \midrule
+Gnat & per gram & 13.65 \\
+& each & 0.01 \\
+Gnu & stuffed & 92.50 \\
+Emu & stuffed & 33.33 \\
+Armadillo & frozen & 8.99 \\ \bottomrule
+\end{tabular}
+\caption{Table Example.}\label{tab:ex}
+\end{table}
+If you don't use tables the list of tables will not appear.
+
+\section{Images}
+Upload images in the images folder, see the following for an example.
+You can see examples of figures in Figure~\ref{fig:my_label} and \ref{fig:my_label2}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{logo_white}
+    \caption{Example of figure, logo.}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{EU_Flag_320_213}
+    \caption{Example of figure, flag.}
+    \label{fig:my_label2}
+\end{figure}
+If you don't use images the list of images will not appear.
+
+\subsection{Subsection Example}
+\lipsum[1]
+\subsubsection{Sub-subsection Example}
+
+
+\lipsum[3-6]
+
+
+\section{Another Section}
+
+
+\lipsum[7-9]
+ 

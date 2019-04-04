@@ -1,0 +1,147 @@
+\documentclass{SINet}
+\usepackage{ifthen}
+\usepackage[printonlyused,nohyperlinks]{acronym}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage[square,numbers]{natbib}
+\usepackage{booktabs}
+% added after johan review
+\usepackage{textcomp}
+\usepackage{eurosym} % use \EUR for euro symbol!
+\usepackage{tikz}
+    \usetikzlibrary{calc}
+
+\usepackage{tikzpagenodes}
+
+\newcommand{\onlypnum}{%
+    \thispagestyle{empty}%
+    \begin{tikzpicture}[remember picture, overlay]
+        \node at (current page footer area.south east) [
+            anchor=base,
+        ] {
+            \thepage
+        };
+    \end{tikzpicture}%
+    \ignorespaces
+}
+\hyphenation{FashionBrain science participant}
+\pretolerance=5000
+\tolerance=9000
+\emergencystretch=0pt
+\righthyphenmin=4
+\lefthyphenmin=4
+% end johan review
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage[section]{placeins}
+\usepackage[figure,table]{totalcount}
+\usepackage [english]{babel}
+\usepackage{xurl}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{totpages}
+\usepackage{totcount}
+\usepackage[nottoc]{tocbibind}
+\newcommand{\say}[1]{\begin{center}\par\begin{minipage}{0.8\columnwidth}\blockquote{#1}{}\end{minipage}\end{center}}
+\newtotcounter{acronum}
+\def\oldac{} \let\oldac=\ac
+\def\ac{\stepcounter{acronum}\oldac}
+\def\oldused{} \let\oldused=\acronymused
+\def\acronymused{\stepcounter{acronum}\oldused}
+
+
+
+\newcommand{\mkh}[1]{\textcolor{red}{(*** MK: #1 ***)}}
+\newcommand{\iar}[1]{\textcolor{blue}{(*** IAR: #1 ***)}}
+\newcommand{\onequote}[1]{`#1'}
+\newcommand{\quotes}[1]{``#1''}
+
+
+% EDIT THIS -------------------------------------------
+\newcommand{\DelTitle}{Requirement Analysis Document}
+\newcommand{\ShortTitle}{\DelTitle} %change it if needed for a shorter footer
+\newcommand{\DelNumber}{D2.2}
+\newcommand{\DelVersion}{4.0}
+% -----------------------------------------------------
+
+\addto\captionsenglish{%
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
+% EDIT THIS -------------------------------------------
+% If you want to manually add acronyms to a list without
+% using the \ac command in the text, simply add them here:
+\acronymused{AR}
+\acronymused{CF}
+\acronymused{CSV}
+\acronymused{ID}
+\acronymused{FB}
+\acronymused{JSON} 
+\acronymused{NLP}
+\acronymused{OEM}
+\acronymused{RD}
+\acronymused{SKU}
+\acronymused{SM}
+\acronymused{TF-IDF}
+\acronymused{VR}
+\acronymused{YT}
+\acronymused{WP}
+
+%...
+% -----------------------------------------------------
+
+
+\begin{document}
+\pagenumbering{roman}
+\thispagestyle{plain}
+% EDIT THIS -------------------------------------------
+% Enter the deliverable information  in this document (title.tex)	% EDIT 
+\input{title}
+% -----------------------------------------------------
+
+\refoot[\pagemark]{\pagemark}
+\rofoot[\pagemark]{\pagemark}
+
+\input{chapters/abstract.tex}
+
+\setcounter{tocdepth}{2}
+
+\tableofcontents
+\iftotalfigures\listoffigures\fi
+\begingroup
+\let\clearpage\relax
+\iftotaltables\listoftables\fi
+\endgroup
+
+\ifnum\totvalue{acronum}>0%
+\input{acronyms.tex}
+\fi
+
+\clearscrheadfoot 
+\lofoot[\footerlogo \hspace{10pt} \footertext]{\footerlogo \hspace{10pt} \footertext}
+\lefoot[\footerlogo \hspace{10pt} \footertext]{\footerlogo \hspace{10pt} \footertext}
+\refoot[\pagemark]{\pagemark}
+\rofoot[\pagemark]{\pagemark}
+\rohead{\rightmark}
+\rehead{\rightmark}
+\lohead{\leftmark}
+\lehead{\leftmark}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{scrheadings}
+
+% EDIT THIS add the files you need here----------------
+\input{chapters/introduction}
+\input{chapters/data_descr.tex}
+\input{chapters/survey.tex}
+\input{chapters/conclusions}
+
+\bibliographystyle{plainnat}
+%NOTE - do not duplicate entries in different bib files
+\bibliography{bib/references,bib/global}
+%\appendix
+%\input{appendix.tex}
+\end{document}
